@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green"
+    tools:context=".CreateListingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/list_new_harvest"
+            app:titleTextColor="@color/dark_green"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_produce_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/produce_details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/crop_type_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/dark_green"
+            app:layout_constraintTop_toBottomOf="@+id/tv_produce_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/quality_grade_layout">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv_crop_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/black"
+                android:hint="@string/select_a_crop" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quality_grade_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            app:hintTextColor="@color/dark_green"
+            app:layout_constraintTop_toTopOf="@+id/crop_type_layout"
+            app:layout_constraintStart_toEndOf="@+id/crop_type_layout"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/actv_quality_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/black"
+                android:hint="@string/select_a_grade" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/volume_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/dark_green"
+            app:layout_constraintTop_toBottomOf="@+id/crop_type_layout"
+            app:layout_constraintStart_toStartOf="@+id/crop_type_layout"
+            app:layout_constraintEnd_toEndOf="@+id/crop_type_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/volume_in_kgs"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:hintTextColor="@color/dark_green"
+            app:layout_constraintTop_toTopOf="@+id/volume_layout"
+            app:layout_constraintStart_toStartOf="@+id/quality_grade_layout"
+            app:layout_constraintEnd_toEndOf="@+id/quality_grade_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/price_per_kg"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_harvest_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/harvest_status"
+            android:textColor="@color/dark_green"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/volume_layout"
+            app:layout_constraintStart_toStartOf="@+id/volume_layout" />
+
+        <RadioGroup
+            android:id="@+id/rg_harvest_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_harvest_status"
+            app:layout_constraintStart_toStartOf="@+id/tv_harvest_status">
+
+            <RadioButton
+                android:id="@+id/rb_already_harvested"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_green"
+                android:text="@string/already_harvested" />
+
+            <RadioButton
+                android:id="@+id/rb_to_be_harvested"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_green"
+                android:text="@string/to_be_harvested" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_crop_photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crop_photos"
+            android:textColor="@color/dark_green"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/rg_harvest_status"
+            app:layout_constraintStart_toStartOf="@+id/rg_harvest_status" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/photo_upload_area"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/dark_green"
+            app:strokeWidth="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_crop_photos"
+            app:layout_constraintStart_toStartOf="@+id/tv_crop_photos"
+            app:layout_constraintEnd_toEndOf="@+id/price_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_green"
+                    android:text="@string/upload_prompt" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="@color/dark_green"
+            app:layout_constraintTop_toBottomOf="@+id/photo_upload_area"
+            app:layout_constraintStart_toStartOf="@+id/photo_upload_area"
+            app:layout_constraintEnd_toEndOf="@+id/photo_upload_area">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/description_optional"
+                android:textColor="@color/black"
+                android:gravity="top"
+                android:lines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_create_listing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/create_listing"
+            android:backgroundTint="@color/solid_green"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/description_layout"
+            app:layout_constraintStart_toStartOf="@+id/description_layout"
+            app:layout_constraintEnd_toEndOf="@+id/description_layout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

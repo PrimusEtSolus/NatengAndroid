@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">NatengHub</string>
+    <string name="carrot_logo_description">Carrot Logo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Login Screen -->
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
+    <string name="dont_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+
+    <!-- Buyer Marketplace -->
+    <string name="marketplace">Marketplace</string>
+    <string name="unlock_premium_market_analytics">Unlock Premium Market Analytics!</string>
+    <string name="premium_description">See 30-day price forecasts to make smarter purchasing decisions. Upgrade Now</string>
+    <string name="search_produce">Search produce…</string>
+    <string name="filter">Filter</string>
+    <string name="export">Export</string>
+    <string name="post_a_buying_request">Post a Buying Request</string>
+    <string name="post_request_description">Let farmers know what produce you are looking for.</string>
+    <string name="create_request">Create Request</string>
+
+    <!-- Marketplace Produce Item -->
+    <string name="verified_farmer">Verified Farmer</string>
+    <string name="negotiate">Negotiate</string>
+
+    <!-- Farmer Dashboard -->
+    <string name="farmer_dashboard">Farmer Dashboard</string>
+    <string name="total_sales_this_month">Total Sales This Month</string>
+    <string name="active_listings">Active Listings</string>
+    <string name="list_new_harvest">List New Harvest</string>
+
+    <!-- My Listings Screen -->
+    <string name="my_listings">My Listings</string>
+    <string name="my_listings_subtitle">A comprehensive view of all your produce listings, past and present.</string>
+    <string name="crop">Crop</string>
+    <string name="volume">Volume</string>
+    <string name="price">Price</string>
+    <string name="status">Status</string>
+    <string name="date_listed">Date Listed</string>
+
+    <!-- Produce Item -->
+    <string name="cabbage">Cabbage</string>
+    <string name="volume_500kg">500kg</string>
+    <string name="price_30_kg">₱30/kg</string>
+    <string name="live">Live</string>
+    <string name="date_2023_10_26">2023–10-26</string>
+
+    <!-- Create Listing Screen -->
+    <string name="produce_details">Produce Details</string>
+    <string name="select_a_crop">Select a crop</string>
+    <string name="select_a_grade">Select a grade</string>
+    <string name="volume_in_kgs">Volume (in Kgs)</string>
+    <string name="price_per_kg">Price per Kg (₱)</string>
+    <string name="harvest_status">Harvest Status</string>
+    <string name="already_harvested">Already Harvested</string>
+    <string name="to_be_harvested">To Be Harvested</string>
+    <string name="crop_photos">Crop Photos</string>
+    <string name="upload_prompt">Click to upload or drag and drop</string>
+    <string name="description_optional">Description (Optional)</string>
+    <string name="create_listing">Create Listing</string>
+
+    <!-- My Orders Screen -->
+    <string name="my_orders_subtitle">Track and manage all orders you\'ve placed with farmers.</string>
+
+    <!-- Sign Up Screen -->
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_subtitle">Join the digital marketplace for Benguet\'s finest produce.</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="i_am_a">I am a…</string>
+    <string name="farmer">Farmer</string>
+    <string name="institutional_buyer">Institutional Buyer</string>
+</resources>
