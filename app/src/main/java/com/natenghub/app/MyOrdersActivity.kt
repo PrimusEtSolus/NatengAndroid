@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -51,6 +52,16 @@ class MyOrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             val intent = Intent(this, PostRequestActivity::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                } else {
+                    finish()
+                }
+            }
+        })
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -78,13 +89,5 @@ class MyOrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
     }
 }
