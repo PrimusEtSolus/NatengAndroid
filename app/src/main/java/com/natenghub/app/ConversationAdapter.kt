@@ -1,5 +1,6 @@
 package com.natenghub.app
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,11 @@ class ConversationAdapter(private val conversationList: List<Conversation>) : Re
             holder.unreadCount.text = conversation.unreadCount.toString()
         } else {
             holder.unreadCount.visibility = View.GONE
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ConversationDetailActivity::class.java)
+            holder.itemView.context.startActivity(intent)
         }
     }
 

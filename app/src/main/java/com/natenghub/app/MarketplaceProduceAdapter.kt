@@ -26,6 +26,7 @@ class MarketplaceProduceAdapter(private val produceList: List<MarketplaceProduce
         holder.location.text = produce.location
         holder.verifiedFarmer.visibility = if (produce.isVerified) View.VISIBLE else View.GONE
         // In a real app, you would load the image from the URL here
+        holder.produceImage.setImageResource(R.drawable.ic_natenghub_logo) // Placeholder
 
         if (produce.name == "Fresh Cabbage") {
             holder.negotiateButton.setOnClickListener {

@@ -24,7 +24,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:menu="@menu/farmer_dashboard_menu" />
 
-        <!-- Summary Cards -->
         <LinearLayout
             android:id="@+id/summary_cards"
             android:layout_width="0dp"
@@ -97,7 +96,6 @@
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
-        <!-- Active Listings Section -->
         <TextView
             android:id="@+id/tv_active_listings_title"
             android:layout_width="wrap_content"

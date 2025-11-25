@@ -7,14 +7,11 @@
     android:background="@color/solid_green"
     tools:context=".SplashActivity">
 
-    <!-- This is the Carrot Logo -->
-    <!-- Make sure your image file is named 'logo_carrot' in the drawable folder -->
     <ImageView
         android:id="@+id/imageView"
-        android:contentDescription="@string/carrot_logo_description"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/carrot"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_carrot_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

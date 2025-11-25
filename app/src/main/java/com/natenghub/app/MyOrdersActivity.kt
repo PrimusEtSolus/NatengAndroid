@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.navigation.NavigationView
 
 class MyOrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -35,15 +36,21 @@ class MyOrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         toggle.syncState()
 
         val orderList = listOf(
-            Transaction("ORD001", "2023-10-25", "₱50,000.00", "Delivered"),
-            Transaction("ORD002", "2023-10-26", "₱15,000.00", "Shipped"),
-            Transaction("ORD003", "2023-10-22", "₱18,000.00", "Delivered"),
-            Transaction("ORD004", "2023-10-27", "₱9,000.00", "Processing")
+            Transaction("ORD001", "2023-10-25", "- ₱50,000.00", "Delivered"),
+            Transaction("ORD002", "2023-10-26", "- ₱15,000.00", "Shipped"),
+            Transaction("ORD003", "2023-10-22", "- ₱18,000.00", "Delivered"),
+            Transaction("ORD004", "2023-10-27", "- ₱9,000.00", "Processing")
         )
 
         val recyclerView = findViewById<RecyclerView>(R.id.rv_orders)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = TransactionAdapter(orderList)
+
+        val postRequestCard = findViewById<MaterialCardView>(R.id.post_buying_request_card)
+        postRequestCard.setOnClickListener {
+            val intent = Intent(this, PostRequestActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -57,6 +64,7 @@ class MyOrdersActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             }
             R.id.nav_transaction_history -> {
                 val intent = Intent(this, TransactionHistoryActivity::class.java)
+                intent.putExtra("user_type", "buyer")
                 startActivity(intent)
             }
             R.id.nav_settings -> {

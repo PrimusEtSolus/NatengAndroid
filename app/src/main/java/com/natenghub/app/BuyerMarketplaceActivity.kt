@@ -78,6 +78,11 @@ class BuyerMarketplaceActivity : AppCompatActivity(), NavigationView.OnNavigatio
                 intent.putExtra("user_type", "buyer")
                 startActivity(intent)
             }
+            R.id.nav_chat -> {
+                val intent = Intent(this, ChatActivity::class.java)
+                intent.putExtra("user_type", "buyer")
+                startActivity(intent)
+            }
             R.id.nav_settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
                 intent.putExtra("user_type", "buyer")

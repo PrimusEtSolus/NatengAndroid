@@ -11,6 +11,13 @@
     <string name="or">or</string>
     <string name="dont_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
 
+    <!-- New Welcome/Login Screen -->
+    <string name="welcome_to_natenghub">Welcome to NatengHub</string>
+    <string name="welcome_subtitle">The Digital Marketplace for Benguet Farmers</string>
+    <string name="login_as_farmer">Login as Farmer</string>
+    <string name="login_as_institutional_buyer">Login as Institutional Buyer</string>
+    <string name="verification_note">Note: Verification is mandatory for all users to prevent scams and ensure a trustworthy marketplace.</string>
+
     <!-- Buyer Marketplace -->
     <string name="marketplace">Marketplace</string>
     <string name="unlock_premium_market_analytics">Unlock Premium Market Analytics!</string>
@@ -73,6 +80,10 @@
     <string name="i_am_a">I am a…</string>
     <string name="farmer">Farmer</string>
     <string name="institutional_buyer">Institutional Buyer</string>
+
+    <!-- Post Request Screen -->
+    <string name="what_crop_do_you_need">What crop do you need?</string>
+    <string name="when_do_you_need_it">When do you need it?</string>
 
     <!-- Notifications -->
     <string name="notification_new_order_title">New Order Received</string>

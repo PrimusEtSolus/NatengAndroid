@@ -25,6 +25,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".FarmerDashboardActivity"
             android:exported="false" />
         <activity
@@ -62,6 +65,9 @@
             android:exported="false" />
         <activity
             android:name=".NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConversationDetailActivity"
             android:exported="false" />
     </application>
 
