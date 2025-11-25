@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -51,6 +52,16 @@ class BuyerMarketplaceActivity : AppCompatActivity(), NavigationView.OnNavigatio
             val intent = Intent(this, PostRequestActivity::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                } else {
+                    finish()
+                }
+            }
+        })
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -64,6 +75,7 @@ class BuyerMarketplaceActivity : AppCompatActivity(), NavigationView.OnNavigatio
             }
             R.id.nav_transaction_history -> {
                 val intent = Intent(this, TransactionHistoryActivity::class.java)
+                intent.putExtra("user_type", "buyer")
                 startActivity(intent)
             }
             R.id.nav_settings -> {
@@ -79,14 +91,6 @@ class BuyerMarketplaceActivity : AppCompatActivity(), NavigationView.OnNavigatio
         return true
     }
 
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.farmer_dashboard_menu, menu)
         return true
@@ -99,7 +103,9 @@ class BuyerMarketplaceActivity : AppCompatActivity(), NavigationView.OnNavigatio
                 true
             }
             R.id.action_notifications -> {
-                Toast.makeText(this, "Notifications clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, NotificationsActivity::class.java)
+                intent.putExtra("user_type", "buyer")
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)

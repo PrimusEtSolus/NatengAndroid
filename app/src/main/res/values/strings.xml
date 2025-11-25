@@ -46,7 +46,7 @@
     <string name="volume_500kg">500kg</string>
     <string name="price_30_kg">₱30/kg</string>
     <string name="live">Live</string>
-    <string name="date_2023_10_26">2023–10-26</string>
+    <string name="date_2023_10_26">2023–10–26</string>
 
     <!-- Create Listing Screen -->
     <string name="produce_details">Produce Details</string>
@@ -73,4 +73,9 @@
     <string name="i_am_a">I am a…</string>
     <string name="farmer">Farmer</string>
     <string name="institutional_buyer">Institutional Buyer</string>
+
+    <!-- Notifications -->
+    <string name="notification_new_order_title">New Order Received</string>
+    <string name="notification_new_order_message">You have a new order for 100kg of Cabbage from Buyer Corp.</string>
+    <string name="notification_timestamp_5_min">5 minutes ago</string>
 </resources>
